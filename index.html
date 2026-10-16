@@ -21,7 +21,7 @@
     (function () {
       var el = document.getElementById('vintro');
       var v = el.querySelector('video');
-      var CUT = 7.3;        /* обрезаем ролик до сгенерированного «сайта» в конце */
+      var CUT = 9.9;        /* ролик целиком */
       var FADE = 0.6;       /* плавный переход в главную */
       var seen = false;
       try { seen = sessionStorage.getItem('vh-intro') === '1'; sessionStorage.setItem('vh-intro', '1'); } catch (e) {}
@@ -45,7 +45,7 @@
       v.addEventListener('playing', function () { clearTimeout(waitTimer); });
       var p = v.play();
       if (p && p.catch) p.catch(done);
-      setTimeout(done, 11000);
+      setTimeout(done, 12500);
     })();
   </script>
   <header class="site-header">
