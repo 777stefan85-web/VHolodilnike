@@ -4,6 +4,7 @@
 
   var CHECK_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>';
   var LAUNCH_THANKS = 'Спасибо! Мы напишем, когда запустимся.';
+  var SURVEY_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSesLIS_T1SYirxcd_MxeFPEUbNu2eVaSeOzcXVq6qU7Opqa2A/viewform';
 
   /* ---------- Отправка заявок на почту через FormSubmit ---------- */
   var MAIL_ENDPOINT = 'https://formsubmit.co/ajax/fedotpoi01@gmail.com';
@@ -28,6 +29,15 @@
         return data;
       });
     });
+  }
+
+  // Понятный текст ошибки по ответу FormSubmit
+  function errorText(err) {
+    var m = (err && err.message) || '';
+    if (/activat/i.test(m)) return 'Форма ещё не активирована: владельцу сайта нужно подтвердить её по письму от FormSubmit.';
+    if (/web server|file/i.test(m)) return 'Форма работает только на сайте в интернете, а не из файла на компьютере.';
+    if (m && m !== 'send failed' && !/fetch/i.test(m)) return 'Не получилось отправить: ' + m;
+    return SEND_ERROR;
   }
 
   function setBusy(btn, busy, label) {
@@ -111,7 +121,7 @@
       setBusy(btn, true, 'Отправляем…');
       sendMail('ВХолодильнике: уведомить о запуске', { 'Тип заявки': 'Узнать о запуске', 'Email': value })
         .then(showDone)
-        .catch(function () { setBusy(btn, false); msg.textContent = SEND_ERROR; });
+        .catch(function (err) { setBusy(btn, false); msg.textContent = errorText(err); });
     });
     input.addEventListener('input', function () { msg.textContent = ''; });
   }
@@ -128,12 +138,14 @@
     '  </button>' +
     '  <img class="icon" src="logo-icon.png" alt="">' +
     '  <h2 id="modal-title">Скоро в сторах</h2>' +
-    '  <p>Приложение выйдет 1 апреля 2027 года. Оставь email — напишем в день запуска.</p>' +
+    '  <p>Приложение выйдет 1 апреля 2027 года. Помоги нам сделать его удобнее — пройди наш опрос.</p>' +
+    '  <a class="btn btn-accent modal-survey" href="' + SURVEY_URL + '" target="_blank" rel="noopener">Пройти опрос и помочь проекту</a>' +
     '  <div class="stores" aria-label="Магазины приложений">' +
     '    <span class="store"><span><small>Скоро в</small><b>App Store</b></span></span>' +
     '    <span class="store"><span><small>Скоро в</small><b>Google Play</b></span></span>' +
     '    <span class="store"><span><small>Скоро в</small><b>RuStore</b></span></span>' +
     '  </div>' +
+    '  <p class="modal-or">А ещё можешь оставить email — напишем в день запуска:</p>' +
     '  <div class="modal-form-slot"></div>' +
     '</div>';
   document.body.appendChild(modal);
@@ -149,7 +161,7 @@
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('no-scroll');
     setTimeout(function () {
-      var inp = slot.querySelector('input');
+      var inp = modal.querySelector('.modal-survey');
       if (inp) inp.focus();
     }, 60);
   }
@@ -217,7 +229,7 @@
         _replyto: email.value.trim()
       })
         .then(showSent)
-        .catch(function () { setBusy(cbtn, false); cmsg.textContent = SEND_ERROR; });
+        .catch(function (err) { setBusy(cbtn, false); cmsg.textContent = errorText(err); });
     });
     contact.addEventListener('input', function () { cmsg.textContent = ''; });
   }

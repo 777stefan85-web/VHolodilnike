@@ -12,6 +12,42 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="home">
+  <div class="vintro" id="vintro" aria-hidden="true">
+    <video class="vintro-video" src="intro.mp4" muted playsinline preload="auto"></video>
+    <div class="vintro-shade"></div>
+    <button class="intro-skip" type="button">Пропустить</button>
+  </div>
+  <script>
+    (function () {
+      var el = document.getElementById('vintro');
+      var v = el.querySelector('video');
+      var CUT = 7.3;        /* обрезаем ролик до сгенерированного «сайта» в конце */
+      var FADE = 0.6;       /* плавный переход в главную */
+      var seen = false;
+      try { seen = sessionStorage.getItem('vh-intro') === '1'; sessionStorage.setItem('vh-intro', '1'); } catch (e) {}
+      if (seen || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) { el.remove(); return; }
+      var root = document.documentElement;
+      root.classList.add('intro-on');
+      var finished = false;
+      function done() {
+        if (finished) return;
+        finished = true;
+        el.classList.add('is-out');
+        root.classList.remove('intro-on');
+        setTimeout(function () { if (el.parentNode) el.remove(); }, FADE * 1000 + 50);
+      }
+      el.querySelector('.intro-skip').addEventListener('click', done);
+      v.addEventListener('timeupdate', function () { if (v.currentTime >= CUT - FADE) done(); });
+      v.addEventListener('ended', done);
+      v.addEventListener('error', done);
+      /* если видео не успело загрузиться за 2,5 с — не держим человека */
+      var waitTimer = setTimeout(function () { if (v.readyState < 3) done(); }, 2500);
+      v.addEventListener('playing', function () { clearTimeout(waitTimer); });
+      var p = v.play();
+      if (p && p.catch) p.catch(done);
+      setTimeout(done, 11000);
+    })();
+  </script>
   <header class="site-header">
     <div class="wrap bar">
       <a class="logo" href="index.html" aria-label="ВХолодильнике — на главную">
