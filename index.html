@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ВХолодильнике — твой холодильник в телефоне</title>
+  <meta name="description" content="Приложение, которое помнит, что лежит в твоём холодильнике, напоминает о сроках годности и подсказывает, что приготовить. Релиз — 1 апреля 2027.">
+  <link rel="icon" type="image/png" href="assets/logo-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="logo" href="index.html" aria-label="ВХолодильнике — на главную">
+        <img src="assets/logo.png" alt="ВХолодильнике" width="720" height="148">
+      </a>
+      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="menu" id="menu" aria-label="Основное меню">
+        <ul class="menu-l">
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="app.html">Приложение</a></li>
+          <li><a href="reviews.html">Отзывы</a></li>
+        </ul>
+        <ul class="menu-r">
+          <li><a href="faq.html">Вопросы</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><button class="btn btn-accent" type="button" data-open-modal>Скачать</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1 class="h-display">Твой холодильник&nbsp;— в&nbsp;телефоне</h1>
+        <div class="hero-actions">
+          <div class="stores">
+            <button class="store" type="button" data-open-modal>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <span><small>Скоро в</small><b>App Store</b></span>
+            </button>
+            <button class="store" type="button" data-open-modal>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <span><small>Скоро в</small><b>Google Play</b></span>
+            </button>
+            <button class="store" type="button" data-open-modal>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <span><small>Скоро в</small><b>RuStore</b></span>
+            </button>
+          </div>
+          <div class="launch-form-wrap" style="width:100%;display:grid;justify-items:center">
+            <div data-launch-slot data-btn="Узнать первым" style="width:100%;max-width:520px"></div>
+            <p class="form-note">Узнай о запуске первым — напишем 1 апреля 2027 года</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-stage">
+        <span class="float-chip c1"><span class="dot" style="background:var(--bad)"></span>Молоко: срок истекает завтра</span>
+        <span class="float-chip c2"><span class="dot" style="background:var(--ok)"></span>Омлет со шпинатом: есть все продукты</span>
+        <div class="phone" role="img" aria-label="Пример экрана «Мой холодильник»: список продуктов с цветными метками сроков годности">
+          <div class="screen" aria-hidden="true">
+            <div class="status"><span>9:41</span><i></i></div>
+            <div class="app-top">
+              <h4>Мой холодильник</h4>
+              <p>6 продуктов</p>
+            </div>
+            <div class="search">Найти продукт</div>
+            <ul class="items">
+              <li class="item"><span class="em">🥛</span><span><b>Молоко</b><small>1 л</small></span><span class="tag tag-bad">Срок истекает завтра</span></li>
+              <li class="item"><span class="em">🧀</span><span><b>Сыр</b><small>200 г</small></span><span class="tag tag-warn">2 дня</span></li>
+              <li class="item"><span class="em">🥬</span><span><b>Шпинат</b><small>1 пучок</small></span><span class="tag tag-warn">2 дня</span></li>
+              <li class="item"><span class="em">🥕</span><span><b>Морковь</b><small>4 шт</small></span><span class="tag tag-ok">ещё 5 дней</span></li>
+              <li class="item"><span class="em">🍎</span><span><b>Яблоки</b><small>6 шт</small></span><span class="tag tag-ok">ещё 7 дней</span></li>
+              <li class="item"><span class="em">🥚</span><span><b>Яйца</b><small>10 шт</small></span><span class="tag tag-ok">ещё 12 дней</span></li>
+            </ul>
+            <div class="tabbar"><span class="on"></span><span></span><b class="fab">+</b><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section after-hero" id="how">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 class="h-section">Как это работает</h2>
+          <p class="lead">Четыре простых шага — и продукты перестают теряться в глубине полок.</p>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">1</span>
+            <span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.4 11.2a2 2 0 0 1-2 1.8H8.4a2 2 0 0 1-2-1.8L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/><path d="M12 12v5M9.5 14.5h5"/></svg></span>
+            <h3 class="h-card">Внеси продукты</h3>
+            <p>Сразу после покупки — пару секунд на продукт.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">2</span>
+            <span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 16V11a6 6 0 0 0-12 0v5l-2 2h16l-2-2z"/><path d="M10 21h4"/></svg></span>
+            <h3 class="h-card">Получи напоминание</h3>
+            <p>Когда срок годности подходит к концу.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13h16a8 8 0 0 1-16 0z"/><path d="M9 9c0-1.5 1-1.5 1-3M13 9c0-1.5 1-1.5 1-3"/></svg></span>
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3 class="h-card">Выбери блюдо</h3>
+            <p>Из того, что уже есть дома.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">4</span>
+            <span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg></span>
+            <h3 class="h-card">Отметь как использованный</h3>
+            <p>И смотри, сколько еды ты спас.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+
+    <section class="section-tight" id="benefits">
+      <div class="wrap">
+        <div class="benefits-band reveal">
+          <div class="section-head">
+            <h2 class="h-section">Что ты получаешь</h2>
+          </div>
+          <ul class="benefits">
+            <li class="benefit">
+              <span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10h18M16 14.5h2"/></svg></span>
+              <div><h3>Экономишь деньги</h3><p>Меньше выброшенных продуктов и лишних покупок.</p></div>
+            </li>
+            <li class="benefit">
+              <span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M10 2h4"/></svg></span>
+              <div><h3>Экономишь время</h3><p>Ответ на «что приготовить» — за секунды.</p></div>
+            </li>
+            <li class="benefit">
+              <span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg></span>
+              <div><h3>Спокойно соблюдаешь рацион</h3><p>Меню под цель питания без ручного подсчёта.</p></div>
+            </li>
+            <li class="benefit">
+              <span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14z"/><path d="M5 19l7-7"/></svg></span>
+              <div><h3>Потребляешь осознанно</h3><p>Меньше пищевых отходов.</p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="more">
+      <div class="wrap">
+        <div class="jump">
+          <a class="reveal" href="about.html">
+            <h3>О нас</h3>
+            <p>Зачем мы это делаем: сколько еды выбрасывают в мире и в России и как с этим связана цель ООН №12.</p>
+            <span class="go">Почему это важно <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="reveal" href="app.html">
+            <h3>Приложение</h3>
+            <p>Как выглядят экраны, что будет бесплатно, что войдёт в подписку и как мы храним данные.</p>
+            <span class="go">Посмотреть экраны <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="launch">
+      <div class="wrap">
+        <div class="cta-band reveal">
+          <h2 class="h-section">Узнай о запуске первым</h2>
+          <p class="lead">Релиз — 1 апреля 2027 года в App Store, Google Play и RuStore. Оставь email, и мы напишем в день запуска.</p>
+          <div data-launch-slot style="width:100%;max-width:520px"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot">
+        <div class="foot-logo">
+          <a href="index.html" aria-label="ВХолодильнике — на главную"><img src="assets/logo.png" alt="ВХолодильнике" width="720" height="148"></a>
+          <p>Приложение, которое помнит, что лежит в твоём холодильнике.</p>
+        </div>
+        <ul class="foot-links" aria-label="Страницы сайта">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="app.html">Приложение</a></li>
+          <li><a href="reviews.html">Отзывы</a></li>
+          <li><a href="faq.html">Вопросы</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+        <div class="socials" aria-label="Соцсети">
+          <button type="button" aria-label="Telegram" data-toast="Ссылки на наши сообщества появятся совсем скоро">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M21 4L3 11l6 2.5M21 4l-4 16-8-6.5M21 4L9 13.5V19l3-3.5"/></svg>
+          </button>
+          <button type="button" aria-label="ВКонтакте" data-toast="Ссылки на наши сообщества появятся совсем скоро">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.8 17.5C6.9 17.5 3.5 13.4 3.4 6.6h3c.1 5 2.3 7.1 4 7.5V6.6h2.8v4.3c1.7-.2 3.5-2.1 4.1-4.3h2.8c-.5 2.6-2.4 4.5-3.8 5.3 1.4.6 3.6 2.3 4.4 5.6h-3.1c-.7-2.2-2.4-3.8-4.6-4v4h-.2z"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 ВХолодильнике</span>
+        <a href="privacy.html">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

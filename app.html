@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Приложение — ВХолодильнике</title>
+  <meta name="description" content="Экраны приложения ВХолодильнике, бесплатные функции и подписка, тарифы и безопасность данных.">
+  <link rel="icon" type="image/png" href="assets/logo-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="logo" href="index.html" aria-label="ВХолодильнике — на главную">
+        <img src="assets/logo.png" alt="ВХолодильнике" width="720" height="148">
+      </a>
+      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="menu" id="menu" aria-label="Основное меню">
+        <ul class="menu-l">
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="app.html" class="is-active" aria-current="page">Приложение</a></li>
+          <li><a href="reviews.html">Отзывы</a></li>
+        </ul>
+        <ul class="menu-r">
+          <li><a href="faq.html">Вопросы</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><button class="btn btn-accent" type="button" data-open-modal>Скачать</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <h1 class="h-display">Приложение</h1>
+      </div>
+    </section>
+
+    <section class="section-tight" style="padding-top:0" aria-label="Экраны приложения">
+      <div class="wrap screens-shell">
+        <div class="screens" tabindex="0" aria-label="Карусель экранов приложения">
+          <figure class="shot">
+        <div class="phone" role="img" aria-label="Пример экрана «Мой холодильник»: список продуктов с цветными метками сроков годности">
+          <div class="screen" aria-hidden="true">
+            <div class="status"><span>9:41</span><i></i></div>
+            <div class="app-top">
+              <h4>Мой холодильник</h4>
+              <p>6 продуктов</p>
+            </div>
+            <div class="search">Найти продукт</div>
+            <ul class="items">
+              <li class="item"><span class="em">🥛</span><span><b>Молоко</b><small>1 л</small></span><span class="tag tag-bad">Срок истекает завтра</span></li>
+              <li class="item"><span class="em">🧀</span><span><b>Сыр</b><small>200 г</small></span><span class="tag tag-warn">2 дня</span></li>
+              <li class="item"><span class="em">🥬</span><span><b>Шпинат</b><small>1 пучок</small></span><span class="tag tag-warn">2 дня</span></li>
+              <li class="item"><span class="em">🥕</span><span><b>Морковь</b><small>4 шт</small></span><span class="tag tag-ok">ещё 5 дней</span></li>
+              <li class="item"><span class="em">🍎</span><span><b>Яблоки</b><small>6 шт</small></span><span class="tag tag-ok">ещё 7 дней</span></li>
+              <li class="item"><span class="em">🥚</span><span><b>Яйца</b><small>10 шт</small></span><span class="tag tag-ok">ещё 12 дней</span></li>
+            </ul>
+            <div class="tabbar"><span class="on"></span><span></span><b class="fab">+</b><span></span><span></span></div>
+          </div>
+        </div>
+            <figcaption><b>Мой холодильник</b><small>Продукты и их сроки</small></figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="phone" role="img" aria-label="Пример экрана: уведомление на экране блокировки «Молоко — срок истекает завтра»">
+              <div class="screen lock" aria-hidden="true">
+                <div class="status"><span>8:30</span><i></i></div>
+                <div class="lock-time"><b>8:30</b><span>Среда, 14 октября</span></div>
+                <div class="push">
+                  <div class="push-head"><img src="assets/logo-icon.png" alt=""><span>ВХолодильнике</span><time>сейчас</time></div>
+                  <p><b>Молоко — срок истекает завтра.</b>Посмотри, что приготовить</p>
+                </div>
+                <div class="lock-bottom"><span></span><span></span></div>
+              </div>
+            </div>
+            <figcaption><b>Напоминание</b><small>Push, когда срок подходит к концу</small></figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="phone" role="img" aria-label="Пример экрана: рецепты из продуктов, которые есть дома">
+              <div class="screen" aria-hidden="true">
+                <div class="status"><span>9:41</span><i></i></div>
+                <div class="app-top"><h4>Рецепты</h4><p>Из того, что есть дома</p></div>
+                <div class="recipes">
+                  <div class="recipe"><div class="pic" style="background:#fff4d6">🍳🥬</div><div class="body"><b>Омлет со шпинатом<small>15 мин</small></b><span class="tag tag-ok">Есть все продукты</span></div></div>
+                  <div class="recipe"><div class="pic" style="background:#e6f3eb">🥞🧀</div><div class="body"><b>Сырники<small>25 мин</small></b><span class="tag tag-ok">Есть все продукты</span></div></div>
+                  <div class="recipe"><div class="pic" style="background:#fff0e2">🥕🍲</div><div class="body"><b>Морковный суп<small>40 мин</small></b><span class="tag tag-warn">Не хватает 1 продукта</span></div></div>
+                </div>
+                <div class="tabbar"><span></span><span class="on"></span><b class="fab">+</b><span></span><span></span></div>
+              </div>
+            </div>
+            <figcaption><b>Рецепты</b><small>Что приготовить прямо сейчас</small></figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="phone" role="img" aria-label="Пример экрана: добавление продукта с названием, категорией и сроком годности">
+              <div class="screen" aria-hidden="true">
+                <div class="status"><span>9:41</span><i></i></div>
+                <div class="app-top"><h4>Новый продукт</h4><p>Пара секунд — и готово</p></div>
+                <div class="form-screen">
+                  <div class="fld"><label>Название</label><div class="val">Кефир</div></div>
+                  <div class="fld"><label>Категория</label>
+                    <div class="chips"><span class="chip on">Молочное</span><span class="chip">Овощи</span><span class="chip">Фрукты</span><span class="chip">Мясо</span><span class="chip">Крупы</span></div>
+                  </div>
+                  <div class="fld"><label>Срок годности</label><div class="val plain"><span>20.10.2026</span><span>📅</span></div></div>
+                  <div class="chips"><span class="chip">+3 дня</span><span class="chip">+7 дней</span><span class="chip">+14 дней</span></div>
+                  <div class="screen-btn">Добавить в холодильник</div>
+                </div>
+                <div class="tabbar"><span></span><span></span><b class="fab">+</b><span></span><span></span></div>
+              </div>
+            </div>
+            <figcaption><b>Добавление продукта</b><small>Название, категория, срок</small></figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="phone" role="img" aria-label="Пример экрана: статистика, спасено продуктов за месяц — 12">
+              <div class="screen" aria-hidden="true">
+                <div class="status"><span>9:41</span><i></i></div>
+                <div class="app-top"><h4>Статистика</h4><p>Октябрь</p></div>
+                <div class="stat-hero"><small>Спасено продуктов за месяц</small><b>12</b></div>
+                <div class="bars">
+                  <div class="bars-title">По неделям</div>
+                  <div class="bars-grid">
+                    <div><em>2</em><i style="height:34%"></i>1 нед</div>
+                    <div><em>3</em><i style="height:52%"></i>2 нед</div>
+                    <div><em>3</em><i style="height:52%"></i>3 нед</div>
+                    <div><em>4</em><i style="height:70%"></i>4 нед</div>
+                  </div>
+                </div>
+                <div class="streak"><span>🏅</span>Ни одного выброшенного продукта 9 дней подряд</div>
+                <div class="tabbar"><span></span><span></span><b class="fab">+</b><span></span><span class="on"></span></div>
+              </div>
+            </div>
+            <figcaption><b>Статистика</b><small>Пример экрана</small></figcaption>
+          </figure>
+        </div>
+        <div class="screens-nav">
+          <button class="round" type="button" data-scroll="-1" aria-label="Предыдущий экран"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="round" type="button" data-scroll="1" aria-label="Следующий экран"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 class="h-section">Функции</h2>
+          <p class="lead">Базовые функции — бесплатно с первого дня. Умные — в подписке, чуть позже.</p>
+        </div>
+        <div class="features">
+          <div class="feat-group">
+            <h3>Бесплатно <span class="badge badge-free">в MVP, 1 апреля 2027</span></h3>
+            <div class="feat-grid">
+              <article class="feat reveal"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="3"/><path d="M5 10h14M8.5 6v1.5M8.5 13v2.5"/></svg></span><h4>Учёт продуктов</h4><p>Вносишь, что лежит в холодильнике.</p></article>
+              <article class="feat reveal"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M8 14h3"/></svg></span><h4>Сроки годности</h4><p>Приложение помнит дату для каждого продукта.</p></article>
+              <article class="feat reveal"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 16V11a6 6 0 0 0-12 0v5l-2 2h16l-2-2z"/><path d="M10 21h4"/></svg></span><h4>Напоминания</h4><p>Push-уведомление, когда срок подходит к концу.</p></article>
+              <article class="feat reveal"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h10a4 4 0 0 1 4 4v12H9a4 4 0 0 1-4-4V4z"/><path d="M9 9h6M9 13h4"/></svg></span><h4>Список рецептов</h4><p>Каталог блюд.</p></article>
+            </div>
+          </div>
+          <div class="feat-group">
+            <h3>В подписке <span class="badge badge-soon">Скоро</span></h3>
+            <div class="feat-grid">
+              <article class="feat pro reveal"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M18 15l.8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8z"/></svg></span><h4>Подбор рецептов ИИ</h4><p>Блюда из продуктов, которые есть именно у тебя, — в первую очередь из тех, что скоро испортятся.</p></article>
+              <article class="feat pro reveal"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6.4 6.4M12 12H3"/></svg></span><h4>КБЖУ и диеты</h4><p>Меню под цель питания: похудение, спортивное питание, диетические ограничения.</p></article>
+              <article class="feat pro reveal"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5h11M9 12h11M9 19h11"/><path d="M4 5l1 1 2-2M4 12l1 1 2-2M4 19h2"/></svg></span><h4>Недельное меню и список покупок</h4><p>Покупаешь только то, чего не хватает.</p></article>
+              <article class="feat pro reveal"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 7 5-2.5 5 2.5-1.5-7"/></svg></span><h4>Геймификация</h4><p>Награды за продукты, использованные вовремя, и челлендж «Ноль выброшенной еды».</p></article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight" id="compare" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 class="h-section">Чем мы отличаемся</h2>
+          <p class="lead">Хорошие сервисы уже есть — мы закрываем то, чего им не хватает.</p>
+        </div>
+        <table class="compare reveal">
+          <thead>
+            <tr><th scope="col">Обычные сервисы</th><th scope="col">ВХолодильнике</th></tr>
+          </thead>
+          <tbody>
+            <tr><td data-label="Обычные сервисы">Сервисы рецептов ищут по названию блюда, а не по продуктам дома.</td><td data-label="ВХолодильнике">Подбирает рецепты из того, что уже лежит в твоём холодильнике.</td></tr>
+            <tr><td data-label="Обычные сервисы">Трекеры питания считают КБЖУ, но не знают, что лежит в холодильнике.</td><td data-label="ВХолодильнике">Знает содержимое холодильника и составляет меню под цель питания.</td></tr>
+            <tr><td data-label="Обычные сервисы">Доставка готовой еды и готовые рационы — дороже и не используют уже купленные продукты.</td><td data-label="ВХолодильнике">Помогает готовить из продуктов, которые ты уже купил.</td></tr>
+            <tr><td data-label="Обычные сервисы">Зарубежные сервисы подбора рецептов по ингредиентам — без русскоязычного контента и диет.</td><td data-label="ВХолодильнике">Российская разработка на русском языке, с учётом диет.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <h2 class="h-section">Тарифы</h2>
+        </div>
+        <div class="pricing">
+          <div class="plan reveal">
+            <h3>Бесплатно</h3>
+            <div class="price">0 ₽</div>
+            <ul>
+              <li>Учёт продуктов</li>
+              <li>Сроки годности</li>
+              <li>Напоминания</li>
+              <li>Список рецептов</li>
+            </ul>
+            <button class="btn btn-ghost" type="button" data-open-modal>Узнать о запуске</button>
+          </div>
+          <div class="plan pro reveal">
+            <h3>Подписка <span class="badge badge-soon">Скоро</span></h3>
+            <div class="price">299 ₽ <small>/ мес</small></div>
+            <ul>
+              <li>Всё из бесплатного тарифа</li>
+              <li>Подбор рецептов ИИ</li>
+              <li>КБЖУ и диетические ограничения</li>
+              <li>Недельное меню и список покупок</li>
+              <li>Геймификация</li>
+            </ul>
+            <p class="plan-note">Функции подписки появятся после релиза.</p>
+            <button class="btn btn-green" type="button" data-open-modal>Узнать о запуске</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight" id="safety" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 class="h-section">Данные в безопасности</h2>
+        </div>
+        <div class="safe">
+          <div class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg><b>Серверы в России</b><p>Данные хранятся в Yandex Cloud, обработка по 152-ФЗ.</p></div>
+          <div class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg><b>Без передачи сетям</b><p>Данные о покупках не передаются торговым сетям.</p></div>
+          <div class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13.5 6l-3 12"/></svg><b>Российская разработка</b><p>Делаем приложение в России и для России.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="wrap">
+        <div class="cta-band reveal">
+          <h2 class="h-section">Узнай о запуске первым</h2>
+          <p class="lead">Оставь email — напишем 1 апреля 2027 года.</p>
+          <div data-launch-slot style="width:100%;max-width:520px"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot">
+        <div class="foot-logo">
+          <a href="index.html" aria-label="ВХолодильнике — на главную"><img src="assets/logo.png" alt="ВХолодильнике" width="720" height="148"></a>
+          <p>Приложение, которое помнит, что лежит в твоём холодильнике.</p>
+        </div>
+        <ul class="foot-links" aria-label="Страницы сайта">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="app.html">Приложение</a></li>
+          <li><a href="reviews.html">Отзывы</a></li>
+          <li><a href="faq.html">Вопросы</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+        <div class="socials" aria-label="Соцсети">
+          <button type="button" aria-label="Telegram" data-toast="Ссылки на наши сообщества появятся совсем скоро">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M21 4L3 11l6 2.5M21 4l-4 16-8-6.5M21 4L9 13.5V19l3-3.5"/></svg>
+          </button>
+          <button type="button" aria-label="ВКонтакте" data-toast="Ссылки на наши сообщества появятся совсем скоро">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.8 17.5C6.9 17.5 3.5 13.4 3.4 6.6h3c.1 5 2.3 7.1 4 7.5V6.6h2.8v4.3c1.7-.2 3.5-2.1 4.1-4.3h2.8c-.5 2.6-2.4 4.5-3.8 5.3 1.4.6 3.6 2.3 4.4 5.6h-3.1c-.7-2.2-2.4-3.8-4.6-4v4h-.2z"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 ВХолодильнике</span>
+        <a href="privacy.html">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
