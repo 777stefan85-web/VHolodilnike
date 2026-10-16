@@ -84,7 +84,7 @@
     '  <button class="modal-close" type="button" aria-label="Закрыть окно">' +
     '    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
     '  </button>' +
-    '  <img class="icon" src="assets/logo-icon.png" alt="">' +
+    '  <img class="icon" src="logo-icon.png" alt="">' +
     '  <h2 id="modal-title">Скоро в сторах</h2>' +
     '  <p>Приложение выйдет 1 апреля 2027 года. Оставь email — напишем в день запуска.</p>' +
     '  <div class="stores" aria-label="Магазины приложений">' +
