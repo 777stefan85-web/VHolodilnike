@@ -329,7 +329,7 @@
 
   var html = '';
   // Продукты: 12 штук, разные полосы, скорость и размер
-  for (var i = 0; i < 12; i++) {
+  for (var i = 0; i < 8; i++) {
     var x = (i * 8.3 + (i % 3) * 3) % 96;
     var dur = 28 + (i * 7) % 18;
     var delay = -((i * 37) % dur);
@@ -338,7 +338,7 @@
     html += '<span class="amb-food" style="--x:' + x + '%;--d:' + dur + 's;--s:' + delay + 's;--z:' + size + 'px;--r:' + rot + 'deg">' + FOODS[i % FOODS.length] + '</span>';
   }
   // Пузырьки: 22 штуки
-  for (var j = 0; j < 22; j++) {
+  for (var j = 0; j < 12; j++) {
     var bx = (j * 4.7 + (j % 4) * 2) % 98;
     var bd = 14 + (j * 5) % 14;
     var bs = -((j * 23) % bd);

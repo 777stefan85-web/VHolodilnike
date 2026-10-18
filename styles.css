@@ -1097,3 +1097,96 @@ img.avatar { width: 120px; height: 120px; object-fit: cover; border: 3px solid r
 .intro-on .rise, .intro-on .site-header { animation-play-state: paused; }
 .intro-on body { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) { .vintro { display: none; } }
+
+/* =========================================================
+   Исправление подтормаживания анимации
+   Размытие фона под полупрозрачными блоками пересчитывалось
+   на каждом кадре, пока под ними летали продукты.
+   ========================================================= */
+.site-header.is-scrolled { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(8, 24, 15, .94); }
+.plan, .hd-play, .hd-badge, .intro-skip, .store, .launch-form .row, .push { backdrop-filter: none; -webkit-backdrop-filter: none; }
+.hd-play { background: rgba(255, 255, 255, .14); }
+.hd-badge { background: rgba(255, 255, 255, .1); }
+.plan { background: #0f2419; }
+.plan.pro { background-color: #1d1a10; }
+.push { background: rgba(255, 255, 255, .94); }
+/* огромное свечение больше не «дышит» — это была перерисовка на весь экран */
+body::after { animation: none; }
+/* летающие продукты — отдельным слоем на видеокарте */
+.ambient { contain: strict; }
+.amb-food, .amb-bubble { backface-visibility: hidden; }
+.amb-food { animation-name: amb-rise3d; }
+.amb-bubble { animation-name: amb-bubble3d; }
+@keyframes amb-rise3d {
+  0%   { transform: translate3d(0, 110vh, 0) rotate(0deg); opacity: 0; }
+  8%   { opacity: 1; }
+  50%  { transform: translate3d(24px, 50vh, 0) rotate(calc(var(--r) * .5)); }
+  92%  { opacity: 1; }
+  100% { transform: translate3d(0, -15vh, 0) rotate(var(--r)); opacity: 0; }
+}
+@keyframes amb-bubble3d {
+  0%   { transform: translate3d(0, 105vh, 0); opacity: 0; }
+  10%  { opacity: .9; }
+  100% { transform: translate3d(10px, -5vh, 0); opacity: 0; }
+}
+
+/* Столбики графика «Статистика»: высота в % считается от колонки */
+.bars-grid > div { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; gap: 6px; }
+.bars-grid i { flex: none; }
+
+/* =========================================================
+   Экран «Продукт в опасности» (страница «Приложение»)
+   ========================================================= */
+.danger-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 14px 14px 2px; }
+.danger-top h4 { font-size: 17px; font-weight: 900; }
+.danger-top .tag { font-size: 10px; }
+
+.danger-hero { display: flex; justify-content: center; height: 122px; margin-top: 4px; }
+.milk { height: 122px; width: auto; overflow: visible; }
+/* пакет устало покачивается */
+.milk-body { transform-box: fill-box; transform-origin: 50% 100%; animation: milk-sway 3.2s ease-in-out infinite alternate; }
+@keyframes milk-sway { from { transform: rotate(-11deg); } to { transform: rotate(-4deg); } }
+/* слезинки скатываются */
+.tear { transform-box: fill-box; opacity: 0; animation: tear-drop 2.6s ease-in infinite; }
+.tear-2 { animation-delay: 1.3s; }
+@keyframes tear-drop {
+  0%   { transform: translateY(0); opacity: 0; }
+  12%  { opacity: 1; }
+  70%  { transform: translateY(20px); opacity: 1; }
+  85%, 100% { transform: translateY(24px); opacity: 0; }
+}
+
+/* шкала здоровья */
+.danger-hp { text-align: center; }
+.hearts { display: flex; justify-content: center; gap: 5px; }
+.heart { width: 20px; height: 18px; fill: none; stroke: #c9d3cd; stroke-width: 2; }
+.heart.full { fill: #e5533d; stroke: #e5533d; }
+.heart.pulse { transform-box: fill-box; transform-origin: center; animation: hp-pulse 1.1s ease-in-out infinite; }
+@keyframes hp-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.22); } }
+.danger-hp p { margin-top: 4px; font-size: 12px; font-weight: 700; color: var(--muted); }
+
+/* рецепты, чтобы спасти продукт */
+.danger-recipes { display: grid; gap: 6px; margin: 10px 12px 0; }
+.danger-title { font-size: 13px; font-weight: 900; }
+.rcard {
+  display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; align-items: center; gap: 8px;
+  padding: 6px 8px; border-radius: 12px; background: #fff; box-shadow: 0 1px 0 var(--line);
+}
+.ricon { width: 32px; height: 32px; border-radius: 9px; display: grid; place-items: center; font-size: 18px; background: var(--glow); }
+.rtext b { display: block; font-size: 12.5px; line-height: 1.2; }
+.rtext small { font-size: 11px; font-weight: 700; color: var(--muted); }
+.rcard .tag { max-width: 80px; padding: 3px 7px; font-size: 9.5px; line-height: 1.15; white-space: normal; text-align: center; }
+
+.danger-btn {
+  margin: auto 12px 18px; padding: 13px; border-radius: 14px;
+  background: var(--orange); color: #2b1606; font-weight: 900; font-size: 15px; text-align: center;
+}
+
+/* подпись под экраном */
+.shot { align-content: start; }
+.shot-note { max-width: 290px; font-size: 15px; line-height: 1.45; color: var(--muted); text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .milk-body, .tear, .heart.pulse { animation: none; }
+  .tear { opacity: 1; }
+}
